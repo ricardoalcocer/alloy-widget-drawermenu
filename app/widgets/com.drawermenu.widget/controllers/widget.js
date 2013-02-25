@@ -12,7 +12,8 @@ var showhidemenu=function(){
 	$.drawermainview.width=Ti.Platform.displayCaps.platformWidth;
 	$.drawermainview.animate({
 		left:moveTo,
-		duration:100
+		curve : Ti.UI.ANIMATION_CURVE_EASE_OUT,
+		duration:400
 	});
 }
 

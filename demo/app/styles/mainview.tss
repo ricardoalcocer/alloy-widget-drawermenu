@@ -1,0 +1,14 @@
+"#mainView":{
+	layout: 'vertical',
+	backgroundColor: '#cacaca'
+},
+"#mainTopBar":{
+	width: Ti.UI.FILL,
+	height: "60dp",
+	backgroundColor: '#5B96B2',
+	layout: 'horizontal'
+},
+"#menuButton":{
+	width: "60dp",
+	height: "60dp"
+}

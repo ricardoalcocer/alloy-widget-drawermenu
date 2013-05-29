@@ -1,0 +1,15 @@
+{
+	"id": "com.drawermenu.widget",
+	"name": "Drawer Menu",
+	"description" : "my cool widget",
+	"author": "Ricardo Alcocer",
+	"version": "1.0",
+	"copyright":"Copyright (c) 2013 by Ricardo Alcocer",
+	"license":"Public Domain",
+	"min-alloy-version": "1.0",
+	"min-titanium-version":"2.1",
+	"tags":"",
+	"platforms":"android,ios",
+	"dependencies": {
+	}
+}

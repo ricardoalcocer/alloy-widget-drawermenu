@@ -1,0 +1,5 @@
+<Alloy>
+	<Window class="container">
+		<Require type="widget" src="com.drawermenu.widget" id="drawermenu"/>
+	</Window>
+</Alloy>

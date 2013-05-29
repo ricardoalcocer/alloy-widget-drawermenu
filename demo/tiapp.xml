@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-    <id>ti.drawermenu.widget</id>
-    <name>drawermenuwidget</name>
+    <deployment-targets>
+        <target device="tizen">false</target>
+        <target device="mobileweb">true</target>
+        <target device="iphone">true</target>
+        <target device="ipad">true</target>
+        <target device="android">true</target>
+        <target device="blackberry">false</target>
+    </deployment-targets>
+    <sdk-version>3.0.0.v20121019153308</sdk-version>
+    <id>ti.drawerdemo</id>
+    <name>DrawerDemo</name>
     <version>1.0</version>
-    <publisher>not specified</publisher>
-    <url>not specified</url>
+    <publisher>ralcocer</publisher>
+    <url>http://</url>
     <description>not specified</description>
-    <copyright>not specified</copyright>
+    <copyright>2013 by ralcocer</copyright>
     <icon>appicon.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>
@@ -15,8 +24,8 @@
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
-    <guid>38482d52-5ed9-494d-8626-120ab6dbdc2b</guid>
-    <property name="ti.ui.defaultunit" type="string">system</property>
+    <guid>7c42b821-600a-4212-98b9-bc5775968dde</guid>
+    <property name="ti.ui.defaultunit">system</property>
     <iphone>
         <orientations device="iphone">
             <orientation>Ti.UI.PORTRAIT</orientation>
@@ -37,18 +46,7 @@
         </splash>
         <theme>default</theme>
     </mobileweb>
-    <modules>
-        <module platform="android" version="1.0">ti.physicalSizeCategory</module>
-    </modules>
-    <deployment-targets>
-        <target device="tizen">false</target>
-        <target device="blackberry">false</target>
-        <target device="android">true</target>
-        <target device="ipad">false</target>
-        <target device="iphone">true</target>
-        <target device="mobileweb">true</target>
-    </deployment-targets>
-    <sdk-version>3.0.0.v20121019153308</sdk-version>
+    <modules/>
     <plugins>
         <plugin version="1.0">ti.alloy</plugin>
     </plugins>

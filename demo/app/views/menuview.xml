@@ -1,0 +1,22 @@
+<Alloy>
+	<View id="menuView">
+		<View id="menuTopBar"/>
+		<TableView class="menuTable" id="menuTable">
+			<TableViewRow class="tableRow" id="row1">
+				<View id="rowContainer">
+					<View id="rowGear" class="rowIcon"/><Label id="rowLabel" class="rowLabel">Some menu option</Label>
+				</View>
+			</TableViewRow>
+			<TableViewRow class="tableRow" id="row2">
+				<View id="rowContainer">
+					<View id="rowSkull" class="rowIcon"/><Label id="rowLabel" class="rowLabel">Another menu option</Label>
+				</View>
+			</TableViewRow>
+			<TableViewRow class="tableRow" id="row3">
+				<View id="rowContainer">
+					<View id="rowPicFrame" class="rowIcon"/><Label id="rowLabel" class="rowLabel">Configure options</Label>
+				</View>
+			</TableViewRow>
+		</TableView>
+	</View>
+</Alloy>

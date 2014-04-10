@@ -9,25 +9,16 @@ var showhidemenu=function(){
 		menuOpen=true;
 	}
 
-	var newWidth = Ti.Platform.displayCaps.platformWidth;
-    	if (OS_ANDROID) 
-        	newWidth /= Ti.Platform.displayCaps.logicalDensityFactor;
-	$.drawermainview.width=newWidth;
+	$.drawermainview.width=Ti.Platform.displayCaps.platformWidth;
 	$.drawermainview.animate({
 		left:moveTo,
 		curve : Ti.UI.ANIMATION_CURVE_EASE_OUT,
 		duration:400
 	});
-	
-	
 }
 
 Ti.Gesture.addEventListener('orientationchange', function(e) {
-    var newWidth;
-    newWidth = Ti.Platform.displayCaps.platformWidth;
-    if (OS_ANDROID)
-        newWidth /= Ti.Platform.displayCaps.logicalDensityFactor;
-    $.drawermainview.width = newWidth;
+    $.drawermainview.width=Ti.Platform.displayCaps.platformWidth;
 });
 
 exports.showhidemenu=showhidemenu;

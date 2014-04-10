@@ -10,33 +10,41 @@ function Migrator(config, transactionDb) {
           case "varchar":
           case "date":
           case "datetime":
-            Ti.API.warn("\"" + type + "\" is not a valid sqlite field, using TEXT instead");
+            Ti.API.warn('"' + type + '" is not a valid sqlite field, using TEXT instead');
+
           case "text":
             type = "TEXT";
             break;
+
           case "int":
           case "tinyint":
           case "smallint":
           case "bigint":
           case "boolean":
-            Ti.API.warn("\"" + type + "\" is not a valid sqlite field, using INTEGER instead");
+            Ti.API.warn('"' + type + '" is not a valid sqlite field, using INTEGER instead');
+
           case "integer":
             type = "INTEGER";
             break;
+
           case "double":
           case "float":
           case "decimal":
           case "number":
-            Ti.API.warn("\"" + name + "\" is not a valid sqlite field, using REAL instead");
+            Ti.API.warn('"' + name + '" is not a valid sqlite field, using REAL instead');
+
           case "real":
             type = "REAL";
             break;
+
           case "blob":
             type = "BLOB";
             break;
+
           case "null":
             type = "NULL";
             break;
+
           default:
             type = "TEXT";
         }
@@ -53,7 +61,7 @@ function Migrator(config, transactionDb) {
         var sql = "CREATE TABLE IF NOT EXISTS " + this.table + " ( " + columns.join(",") + ")";
         this.db.execute(sql);
     };
-    this.dropTable = function(config) {
+    this.dropTable = function() {
         this.db.execute("DROP TABLE IF EXISTS " + this.table);
     };
     this.insertRow = function(columnValues) {
@@ -74,7 +82,7 @@ function Migrator(config, transactionDb) {
     this.deleteRow = function(columns) {
         var sql = "DELETE FROM " + this.table, keys = _.keys(columns), len = keys.length, conditions = [], values = [];
         len && (sql += " WHERE ");
-        for (var i = 0; i < len; i++) {
+        for (var i = 0; len > i; i++) {
             conditions.push(keys[i] + " = ?");
             values.push(columns[keys[i]]);
         }
@@ -84,7 +92,7 @@ function Migrator(config, transactionDb) {
 }
 
 function Sync(method, model, opts) {
-    var table = model.config.adapter.collection_name, columns = model.config.columns, dbName = model.config.adapter.db_name || ALLOY_DB_DEFAULT, resp = null, db;
+    var db, table = model.config.adapter.collection_name, columns = model.config.columns, dbName = model.config.adapter.db_name || ALLOY_DB_DEFAULT, resp = null;
     switch (method) {
       case "create":
         resp = function() {
@@ -97,7 +105,7 @@ function Sync(method, model, opts) {
                 });
             } else {
                 var tmpM = model.get(model.idAttribute);
-                model.id = tmpM !== null && typeof tmpM != "undefined" ? tmpM : null;
+                model.id = null !== tmpM && "undefined" != typeof tmpM ? tmpM : null;
             }
             var names = [], values = [], q = [];
             for (var k in columns) {
@@ -109,7 +117,7 @@ function Sync(method, model, opts) {
             db = Ti.Database.open(dbName);
             db.execute("BEGIN;");
             db.execute(sqlInsert, values);
-            if (model.id === null) {
+            if (null === model.id) {
                 var rs = db.execute(sqlId);
                 if (rs.isValidRow()) {
                     model.id = rs.field(0);
@@ -124,6 +132,7 @@ function Sync(method, model, opts) {
             return model.toJSON();
         }();
         break;
+
       case "read":
         var sql = opts.query || "SELECT * FROM " + table;
         db = Ti.Database.open(dbName);
@@ -142,8 +151,9 @@ function Sync(method, model, opts) {
         rs.close();
         db.close();
         model.length = len;
-        len === 1 ? resp = values[0] : resp = values;
+        resp = 1 === len ? values[0] : values;
         break;
+
       case "update":
         var names = [], values = [], q = [];
         for (var k in columns) {
@@ -158,6 +168,7 @@ function Sync(method, model, opts) {
         db.close();
         resp = model.toJSON();
         break;
+
       case "delete":
         var sql = "DELETE FROM " + table + " WHERE " + model.idAttribute + "=?";
         db = Ti.Database.open(dbName);
@@ -168,7 +179,7 @@ function Sync(method, model, opts) {
     }
     if (resp) {
         _.isFunction(opts.success) && opts.success(resp);
-        method === "read" && model.trigger("fetch");
+        "read" === method && model.trigger("fetch");
     } else _.isFunction(opts.error) && opts.error(resp);
 }
 
@@ -187,8 +198,8 @@ function Migrate(Model) {
     migrations.length && migrations[migrations.length - 1](lastMigration);
     var config = Model.prototype.config;
     config.adapter.db_name || (config.adapter.db_name = ALLOY_DB_DEFAULT);
-    var migrator = new Migrator(config), targetNumber = typeof config.adapter.migration == "undefined" || config.adapter.migration === null ? lastMigration.id : config.adapter.migration;
-    if (typeof targetNumber == "undefined" || targetNumber === null) {
+    var migrator = new Migrator(config), targetNumber = "undefined" == typeof config.adapter.migration || null === config.adapter.migration ? lastMigration.id : config.adapter.migration;
+    if ("undefined" == typeof targetNumber || null === targetNumber) {
         var tmpDb = Ti.Database.open(config.adapter.db_name);
         migrator.db = tmpDb;
         migrator.createTable(config);
@@ -196,7 +207,7 @@ function Migrate(Model) {
         return;
     }
     targetNumber += "";
-    var currentNumber = GetMigrationFor(config.adapter.db_name, config.adapter.collection_name), direction;
+    var direction, currentNumber = GetMigrationFor(config.adapter.db_name, config.adapter.collection_name);
     if (currentNumber === targetNumber) return;
     if (currentNumber && currentNumber > targetNumber) {
         direction = 0;
@@ -205,14 +216,14 @@ function Migrate(Model) {
     db = Ti.Database.open(config.adapter.db_name);
     migrator.db = db;
     db.execute("BEGIN;");
-    if (migrations.length) for (var i = 0; i < migrations.length; i++) {
+    if (migrations.length) for (var i = 0; migrations.length > i; i++) {
         var migration = migrations[i], context = {};
         migration(context);
         if (direction) {
             if (context.id > targetNumber) break;
-            if (context.id <= currentNumber) continue;
+            if (currentNumber >= context.id) continue;
         } else {
-            if (context.id <= targetNumber) break;
+            if (targetNumber >= context.id) break;
             if (context.id > currentNumber) continue;
         }
         var funcName = direction ? "up" : "down";
@@ -227,10 +238,10 @@ function Migrate(Model) {
 
 function installDatabase(config) {
     var dbFile = config.adapter.db_file, table = config.adapter.collection_name, rx = /^([\/]{0,1})([^\/]+)\.[^\/]+$/, match = dbFile.match(rx);
-    if (match === null) throw "Invalid sql database filename \"" + dbFile + "\"";
+    if (null === match) throw 'Invalid sql database filename "' + dbFile + '"';
     var dbName = config.adapter.db_name = match[2];
-    Ti.API.debug("Installing sql database \"" + dbFile + "\" with name \"" + dbName + "\"");
-    var db = Ti.Database.install(dbFile, dbName), rs = db.execute("pragma table_info(\"" + table + "\");"), columns = {};
+    Ti.API.debug('Installing sql database "' + dbFile + '" with name "' + dbName + '"');
+    var db = Ti.Database.install(dbFile, dbName), rs = db.execute('pragma table_info("' + table + '");'), columns = {};
     while (rs.isValidRow()) {
         var cName = rs.fieldByName("name"), cType = rs.fieldByName("type");
         columns[cName] = cType;
@@ -240,10 +251,10 @@ function installDatabase(config) {
     config.columns = columns;
     rs.close();
     if (config.adapter.idAttribute) {
-        if (!_.contains(_.keys(config.columns), config.adapter.idAttribute)) throw "config.adapter.idAttribute \"" + config.adapter.idAttribute + "\" not found in list of columns for table \"" + table + "\"\n" + "columns: [" + _.keys(config.columns).join(",") + "]";
+        if (!_.contains(_.keys(config.columns), config.adapter.idAttribute)) throw 'config.adapter.idAttribute "' + config.adapter.idAttribute + '" not found in list of columns for table "' + table + '"\n' + "columns: [" + _.keys(config.columns).join(",") + "]";
     } else {
-        Ti.API.info("No config.adapter.idAttribute specified for table \"" + table + "\"");
-        Ti.API.info("Adding \"" + ALLOY_ID_DEFAULT + "\" to uniquely identify rows");
+        Ti.API.info('No config.adapter.idAttribute specified for table "' + table + '"');
+        Ti.API.info('Adding "' + ALLOY_ID_DEFAULT + '" to uniquely identify rows');
         db.execute("ALTER TABLE " + table + " ADD " + ALLOY_ID_DEFAULT + " TEXT;");
         config.columns[ALLOY_ID_DEFAULT] = "TEXT";
         config.adapter.idAttribute = ALLOY_ID_DEFAULT;
@@ -258,11 +269,11 @@ var _ = require("alloy/underscore")._, util = require("alloy/sync/util"), ALLOY_
 
 module.exports.beforeModelCreate = function(config, name) {
     if (cache.config[name]) return cache.config[name];
-    if (Ti.Platform.osname === "mobileweb" || typeof Ti.Database == "undefined") throw "No support for Titanium.Database in MobileWeb environment.";
+    if ("mobileweb" === Ti.Platform.osname || "undefined" == typeof Ti.Database) throw "No support for Titanium.Database in MobileWeb environment.";
     config.adapter.db_file && installDatabase(config);
     if (!config.adapter.idAttribute) {
-        Ti.API.info("No config.adapter.idAttribute specified for table \"" + config.adapter.collection_name + "\"");
-        Ti.API.info("Adding \"" + ALLOY_ID_DEFAULT + "\" to uniquely identify rows");
+        Ti.API.info('No config.adapter.idAttribute specified for table "' + config.adapter.collection_name + '"');
+        Ti.API.info('Adding "' + ALLOY_ID_DEFAULT + '" to uniquely identify rows');
         config.columns[ALLOY_ID_DEFAULT] = "TEXT";
         config.adapter.idAttribute = ALLOY_ID_DEFAULT;
     }

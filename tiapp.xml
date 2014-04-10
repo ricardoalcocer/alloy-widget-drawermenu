@@ -48,7 +48,7 @@
         <target device="iphone">true</target>
         <target device="mobileweb">true</target>
     </deployment-targets>
-    <sdk-version>3.0.0.v20121019153308</sdk-version>
+    <sdk-version>3.2.2.GA</sdk-version>
     <plugins>
         <plugin version="1.0">ti.alloy</plugin>
     </plugins>

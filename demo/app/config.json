@@ -6,6 +6,6 @@
 	"os:ios": {}, 
 	"os:android": {}, 
 	"dependencies": {
-		"com.drawermenu.widget" : "1.0"
+		"com.alcoapps.drawermenu" : "1.0"
 	}
 }

@@ -1,12 +1,12 @@
 function S4() {
-    return ((1 + Math.random()) * 65536 | 0).toString(16).substring(1);
+    return (0 | 65536 * (1 + Math.random())).toString(16).substring(1);
 }
 
 function guid() {
     return S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4();
 }
 
-function InitAdapter(config) {
+function InitAdapter() {
     throw "localStorage persistence supported only with MobileWeb.";
 }
 
@@ -25,6 +25,7 @@ function Sync(method, model, opts) {
         storeModel(data);
         resp = model.toJSON();
         break;
+
       case "read":
         var store = localStorage.getItem(name), store_data = store && JSON.parse(store) || {}, len = 0;
         for (var key in store_data) {
@@ -33,13 +34,15 @@ function Sync(method, model, opts) {
             len++;
         }
         model.length = len;
-        len === 1 ? resp = model.models[0] : resp = model.models;
+        resp = 1 === len ? model.models[0] : model.models;
         break;
+
       case "update":
         data[model.id] = model;
         storeModel(data);
         resp = model.toJSON();
         break;
+
       case "delete":
         delete data[model.id];
         storeModel(data);
@@ -47,7 +50,7 @@ function Sync(method, model, opts) {
     }
     if (resp) {
         _.isFunction(opts.success) && opts.success(resp);
-        method === "read" && model.trigger("fetch");
+        "read" === method && model.trigger("fetch");
     } else _.isFunction(opts.error) && opts.error(resp);
 }
 

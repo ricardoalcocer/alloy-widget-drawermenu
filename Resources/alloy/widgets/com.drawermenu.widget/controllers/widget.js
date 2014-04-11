@@ -1,12 +1,12 @@
 function WPATH(s) {
-    var index = s.lastIndexOf("/"), path = index === -1 ? "com.drawermenu.widget/" + s : s.substring(0, index) + "/com.drawermenu.widget/" + s.substring(index + 1);
+    var index = s.lastIndexOf("/"), path = -1 === index ? "com.drawermenu.widget/" + s : s.substring(0, index) + "/com.drawermenu.widget/" + s.substring(index + 1);
     return path;
 }
 
 function Controller() {
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     $model = arguments[0] ? arguments[0].$model : null;
-    var $ = this, exports = {}, __defers = {};
+    var $ = this, exports = {};
     $.__views.drawermenuview = Ti.UI.createView({
         id: "drawermenuview"
     });
@@ -31,7 +31,7 @@ function Controller() {
             duration: 100
         });
     };
-    Ti.Gesture.addEventListener("orientationchange", function(e) {
+    Ti.Gesture.addEventListener("orientationchange", function() {
         $.drawermainview.width = Ti.Platform.displayCaps.platformWidth;
     });
     exports.showhidemenu = showhidemenu;

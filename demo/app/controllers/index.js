@@ -9,8 +9,8 @@ $.drawermenu.drawermenuview.add(menuView.getView()); // get view is an Alloy Met
 
 // attach event listener to menu button
 mainView.menuButton.add(controls.getMenuButton({
-	h: '60dp',
-	w: '60dp'
+	h: '60',
+	w: '60'
 }));
 
 mainView.menuButton.addEventListener('click',$.drawermenu.showhidemenu); // method is exposed by widget
@@ -23,8 +23,8 @@ var configView=controls.getConfigView();
 
 //add menu view to ConfigView exposed by widget
 configView.menuButton.add(controls.getMenuButton({
-                h: '60dp',
-                w: '60dp'
+                h: '60',
+                w: '60'
             }));
 
 configView.menuButton.addEventListener('click',$.drawermenu.showhidemenu); // method is exposed by widget

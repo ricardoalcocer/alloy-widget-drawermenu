@@ -7,6 +7,8 @@ function Controller() {
     var $ = this;
     var exports = {};
     $.__views.index = Ti.UI.createWindow({
+        top: 20,
+        statusBarStyle: Titanium.UI.iPhone.StatusBar.LIGHT_CONTENT,
         backgroundColor: "white",
         orientationModes: [ Ti.UI.PORTRAIT, Ti.UI.LANDSCAPE_LEFT, Ti.UI.LANDSCAPE_RIGHT, Ti.UI.UPSIDE_PORTRAIT ],
         navBarHidden: true,

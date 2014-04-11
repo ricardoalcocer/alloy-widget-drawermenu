@@ -7,8 +7,9 @@ function Controller() {
     var $ = this;
     var exports = {};
     $.__views.index = Ti.UI.createWindow({
+        top: 20,
         backgroundColor: "white",
-        orientationModes: [ Ti.UI.PORTRAIT, Ti.UI.LANDSCAPE_LEFT, Ti.UI.LANDSCAPE_RIGHT, Ti.UI.UPSIDE_PORTRAIT ],
+        orientationModes: [ Ti.UI.PORTRAIT, Ti.UI.LANDSCAPE_LEFT, Ti.UI.LANDSCAPE_RIGHT ],
         navBarHidden: true,
         exitOnClose: true,
         id: "index"
@@ -26,15 +27,15 @@ function Controller() {
     var mainView = controls.getMainView();
     $.drawermenu.drawermenuview.add(menuView.getView());
     mainView.menuButton.add(controls.getMenuButton({
-        h: "60dp",
-        w: "60dp"
+        h: "60",
+        w: "60"
     }));
     mainView.menuButton.addEventListener("click", $.drawermenu.showhidemenu);
     $.drawermenu.drawermainview.add(mainView.getView());
     var configView = controls.getConfigView();
     configView.menuButton.add(controls.getMenuButton({
-        h: "60dp",
-        w: "60dp"
+        h: "60",
+        w: "60"
     }));
     configView.menuButton.addEventListener("click", $.drawermenu.showhidemenu);
     var activeView = 1;

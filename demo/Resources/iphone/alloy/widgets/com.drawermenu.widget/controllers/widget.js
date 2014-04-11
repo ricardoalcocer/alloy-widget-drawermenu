@@ -33,7 +33,8 @@ function Controller() {
             moveTo = "250dp";
             menuOpen = true;
         }
-        $.drawermainview.width = Ti.Platform.displayCaps.platformWidth;
+        var newWidth = Ti.Platform.displayCaps.platformWidth;
+        $.drawermainview.width = newWidth;
         $.drawermainview.animate({
             left: moveTo,
             curve: Ti.UI.ANIMATION_CURVE_EASE_OUT,
@@ -41,7 +42,9 @@ function Controller() {
         });
     };
     Ti.Gesture.addEventListener("orientationchange", function() {
-        $.drawermainview.width = Ti.Platform.displayCaps.platformWidth;
+        var newWidth;
+        newWidth = Ti.Platform.displayCaps.platformWidth;
+        $.drawermainview.width = newWidth;
     });
     exports.showhidemenu = showhidemenu;
     _.extend($, exports);

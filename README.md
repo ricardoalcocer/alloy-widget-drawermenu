@@ -3,6 +3,9 @@ DrawerWidget
 
 This is an Appcelerator Alloy widget to implement a nice "drawer-type" menu on you iOS and Android Apps.
 
+
+![Demo](http://s20.postimg.org/wfxbv3kwd/drawermenu.gif)
+
 This Widget exposes two views: drawermenuview and drawermainview
 
 Adding views

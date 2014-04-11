@@ -1,6 +1,15 @@
-".container": {
+".container[platform=ios]": {
+	top: 20,
 	backgroundColor:"white",
+	statusBarStyle:Titanium.UI.iPhone.StatusBar.LIGHT_CONTENT,
 	orientationModes: [Ti.UI.PORTRAIT,Ti.UI.LANDSCAPE_LEFT,Ti.UI.LANDSCAPE_RIGHT,Ti.UI.UPSIDE_PORTRAIT],
+	navBarHidden: true,
+}
+
+".container[platform=android]": {
+	top: 20,
+	backgroundColor:"white",
+	orientationModes: [Ti.UI.PORTRAIT,Ti.UI.LANDSCAPE_LEFT,Ti.UI.LANDSCAPE_RIGHT],
 	navBarHidden: true,
 	exitOnClose: true
 }

@@ -4,8 +4,12 @@ var controls=require('controls');
 var menuView=controls.getMenuView();
 var mainView=controls.getMainView();
 
+
 // add menu view to container exposed by widget
 $.drawermenu.drawermenuview.add(menuView.getView()); // get view is an Alloy Method
+
+// Change the animation duration to a faster motion. Default is 400.
+$.drawermenu.setDuration(200);
 
 // attach event listener to menu button
 mainView.menuButton.add(controls.getMenuButton({

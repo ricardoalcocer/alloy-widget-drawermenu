@@ -1,4 +1,5 @@
 var menuOpen = false;
+var duration = 400;
 
 var showhidemenu=function(){
 	if (menuOpen){
@@ -16,7 +17,7 @@ var showhidemenu=function(){
 	$.drawermainview.animate({
 		left:moveTo,
 		curve : Ti.UI.ANIMATION_CURVE_EASE_OUT,
-		duration:400
+		duration: duration
 	});
 	
 	
@@ -31,3 +32,8 @@ Ti.Gesture.addEventListener('orientationchange', function(e) {
 });
 
 exports.showhidemenu=showhidemenu;
+
+exports.setDuration=function(dur)
+{
+	duration = dur;
+};

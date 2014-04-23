@@ -23,6 +23,9 @@ Then add these views to the exposed containers:
 	$.drawermenu.drawermenuview.add(menuView);
 	$.drawermenu.drawermainview.add(mainView);
 
+Set the slide duration:
+
+	$.drawermenu.setDuration(200);
 
 Triggering the Show and Hide
 ======
@@ -31,3 +34,15 @@ Inside your "Main View" you should have a button to trigger the open and close o
 	var menubutton.addEventListener('click',function(e){
 		$.drawermenu.showhidemenu();
 	})
+
+Contribuitors
+======
+
+* [Ricardo Alcocer](https://github.com/ricardoalcocer)
+* [Bert Grantges](https://github.com/grantges)
+* [Victor Casé](https://github.com/casevictor)
+* [HarkDev](https://github.com/HarkDev)
+
+License
+======
+MIT - [http://alco.mit-license.org](http://alco.mit-license.org)

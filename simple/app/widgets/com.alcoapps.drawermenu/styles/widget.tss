@@ -1,0 +1,24 @@
+"#menuview":{
+	backgroundColor:"#cacaca",
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL
+},
+"#mainview":{
+	backgroundColor:"red",
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL
+},
+"#mainviewheader":{
+	top: "0",
+	height: "50dp",
+	width: Ti.UI.FILL,
+	backgroundColor: "#cacaca"
+},
+"#menubutton":{
+	left: "0",
+	borderWidth: 1,
+	borderColor: "#000",
+	width: "40dp",
+	height: "40dp",
+	visible:true
+}

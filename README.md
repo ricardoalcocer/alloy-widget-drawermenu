@@ -35,6 +35,11 @@ Inside your "Main View" you should have a button to trigger the open and close o
 		$.drawermenu.showhidemenu();
 	})
 
+Apps
+======
+Send me a link to your app, or a pull request of the README.md file to showcase your app using this Widget.
+
+
 Contribuitors
 ======
 

@@ -1,0 +1,1 @@
+/Users/ralcocer/Desktop/drawer2/simple/Resources/iphone/alloy/widgets/com.alcoapps.drawermenu/styles/widget.js

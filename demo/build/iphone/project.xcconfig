@@ -1,0 +1,6 @@
+TI_VERSION=3.2.2.GA
+TI_SDK_DIR=/Users/ralcocer/Library/Application Support/Titanium/mobilesdk/osx/$(TI_VERSION)/iphone
+TI_APPID=ti.drawerdemo
+OTHER_LDFLAGS[sdk=iphoneos*]=$(inherited) -weak_framework iAd
+OTHER_LDFLAGS[sdk=iphonesimulator*]=$(inherited) -weak_framework iAd
+#include "module"

@@ -1,0 +1,23 @@
+{
+	"target": "simulator",
+	"deployType": "development",
+	"deviceFamily": "universal",
+	"iosSdkPath": "/Users/ralcocer/Library/Application Support/Titanium/mobilesdk/osx/3.2.0.GA/iphone",
+	"tiCoreHash": "77157e1ffaec640cf559356a147b6a4c",
+	"modulesHash": "d41d8cd98f00b204e9800998ecf8427e",
+	"modulesNativeHash": "d41d8cd98f00b204e9800998ecf8427e",
+	"gitHash": "d9182d6",
+	"name": "Simple demo",
+	"id": "com.simple.demo",
+	"analytics": true,
+	"publisher": "not specified",
+	"url": "",
+	"version": "1.0",
+	"description": "not specified",
+	"copyright": "not specified",
+	"guid": "0e43e0a1-f5d7-4fa6-8f02-54fc0f23fd90",
+	"skipJSMinification": false,
+	"forceCopy": false,
+	"forceCopyAll": false,
+	"encryptJS": false
+}

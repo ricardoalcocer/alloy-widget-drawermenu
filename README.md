@@ -1,39 +1,38 @@
 DrawerWidget
 ======
 
-This is an Appcelerator Alloy widget to implement a nice "drawer-type" menu on you iOS and Android Apps.
+This is an Appcelerator Alloy widget to implement a nice "drawer-type" menu on you iOS and Android Apps.  This new version 2.0 was a bit refactored, simplifying the way you interact with the widget, and adding swipe functionality.
 
 
 ![Demo](http://s20.postimg.org/wfxbv3kwd/drawermenu.gif)
 
 This Widget exposes two views: drawermenuview and drawermainview
 
-Adding views
+
+Getting started
 ======
-To use, simply add views to these containers.  Example:
+This widget simply gives you a container to which you can add two views: the menu view and the main view.  Open/Close of the menu can be triggered by either a button you add to your main view, or by swiping with your finger.  
 
-Assuming you have a CommonJS module that returns your views:
+Assuming you have a view called **menu** and a view called **main**, simply add this to the index.js of your app:
 
-	var menuView=common.getMenuView();
-	var mainView=common.getMainView();
+````javascript
+$.drawermenu.init({
+    menuview:menu,
+    mainview:main,
+    duration:200,
+    parent: $.index
+})
+````
 
+That's all.  At this point you have a swipeable area that shows the menu by swiping to the right.
 
-Then add these views to the exposed containers:
+If you add a "menu button" to your main view, simply add an event listener like this:
 
-	$.drawermenu.drawermenuview.add(menuView);
-	$.drawermenu.drawermainview.add(mainView);
-
-Set the slide duration:
-
-	$.drawermenu.setDuration(200);
-
-Triggering the Show and Hide
-======
-Inside your "Main View" you should have a button to trigger the open and close of the "drawer".
-
+````javascript
 	var menubutton.addEventListener('click',function(e){
 		$.drawermenu.showhidemenu();
 	})
+````
 
 Apps
 ======

@@ -1,0 +1,6 @@
+"/Users/ralcocer/Desktop/drawer2/demo/build/android/gen/ti/drawerdemo/ApplicationStylesheet.java"
+"/Users/ralcocer/Desktop/drawer2/demo/build/android/gen/ti/drawerdemo/AssetCryptImpl.java"
+"/Users/ralcocer/Desktop/drawer2/demo/build/android/gen/ti/drawerdemo/DrawerdemoActivity.java"
+"/Users/ralcocer/Desktop/drawer2/demo/build/android/gen/ti/drawerdemo/DrawerdemoAppInfo.java"
+"/Users/ralcocer/Desktop/drawer2/demo/build/android/gen/ti/drawerdemo/DrawerdemoApplication.java"
+"/Users/ralcocer/Desktop/drawer2/demo/build/android/gen/ti/drawerdemo/R.java"

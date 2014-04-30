@@ -1,0 +1,1 @@
+module.exports = [{"isClass":true,"priority":10101.0009,"key":"container","style":{top:20,backgroundColor:"white",statusBarStyle:Titanium.UI.iPhone.StatusBar.LIGHT_CONTENT,orientationModes:[Ti.UI.PORTRAIT,Ti.UI.LANDSCAPE_LEFT,Ti.UI.LANDSCAPE_RIGHT,Ti.UI.UPSIDE_PORTRAIT,],navBarHidden:true,}}];

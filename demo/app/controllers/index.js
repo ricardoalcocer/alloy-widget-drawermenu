@@ -4,12 +4,6 @@ var controls=require('controls');
 var menuView=controls.getMenuView();
 var mainView=controls.getMainView();
 
-// add menu view to container exposed by widget
-$.drawermenu.drawermenuview.add(menuView.getView()); // get view is an Alloy Method
-
-// Change the animation duration to a faster motion. Default is 400.
-$.drawermenu.setDuration(200);
-
 // attach event listener to menu button
 mainView.menuButton.add(controls.getMenuButton({
 	h: '60',
@@ -22,8 +16,6 @@ mainView.menuButton.addEventListener('click',function(){
 	$.drawermenu.menuOpen=!$.drawermenu.menuOpen;
 }); // method is exposed by widget
 
-// add view to container exposed by widget
-$.drawermenu.drawermainview.add(mainView.getView());
 
 // get config view as objects
 var configView=controls.getConfigView();
@@ -39,6 +31,13 @@ configView.menuButton.addEventListener('click',function(){
 	$.drawermenu.showhidemenu();
 	$.drawermenu.menuOpen=!$.drawermenu.menuOpen;
 }); // method is exposed by widget
+
+$.drawermenu.init({
+    menuview:menuView.getView(),
+    mainview:mainView.getView(),
+    duration:200,
+    parent: $.index
+})
 
 //variable to controler de open/close slide
 var activeView = 1;
@@ -65,19 +64,6 @@ menuView.menuTable.addEventListener('click',function(e){
     }
     // on Android the event is received by the label, so watch out!
     Ti.API.info(e.rowData.id); 
-});
-
-//Add new functionality 'swipe to open/close menu' at any point of main window
-$.index.addEventListener('swipe',function(e){ 
-    if($.drawermenu.menuOpen == false && e.direction == 'right'){
-        $.drawermenu.showhidemenu();
-        $.drawermenu.menuOpen = true;
-    }
-    
-    if($.drawermenu.menuOpen == true && e.direction == 'left' ){
-        $.drawermenu.showhidemenu();
-        $.drawermenu.menuOpen = false;
-    }
 });
 
 $.index.open();

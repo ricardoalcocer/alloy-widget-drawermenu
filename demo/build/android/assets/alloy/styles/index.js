@@ -1,1 +1,0 @@
-module.exports=[{isClass:!0,priority:10101.001,key:"container",style:{top:20,backgroundColor:"white",orientationModes:[Ti.UI.PORTRAIT,Ti.UI.LANDSCAPE_LEFT,Ti.UI.LANDSCAPE_RIGHT],navBarHidden:!0,exitOnClose:!0}}];

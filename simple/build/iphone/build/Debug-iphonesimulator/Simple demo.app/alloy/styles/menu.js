@@ -1,1 +1,0 @@
-/Users/ralcocer/Desktop/drawer2/simple/Resources/iphone/alloy/styles/menu.js

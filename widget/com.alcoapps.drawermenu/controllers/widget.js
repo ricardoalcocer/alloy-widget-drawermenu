@@ -19,8 +19,6 @@ var showhidemenu=function(){
 		curve : Ti.UI.ANIMATION_CURVE_EASE_OUT,
 		duration: duration
 	});
-	
-	
 }
 
 Ti.Gesture.addEventListener('orientationchange', function(e) {
@@ -32,8 +30,7 @@ Ti.Gesture.addEventListener('orientationchange', function(e) {
 });
 
 exports.showhidemenu=showhidemenu;
-
-exports.setDuration=function(dur)
-{
+exports.menuOpen = menuOpen;
+exports.setDuration=function(dur){
 	duration = dur;
 };

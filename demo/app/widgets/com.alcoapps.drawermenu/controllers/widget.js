@@ -32,8 +32,7 @@ Ti.Gesture.addEventListener('orientationchange', function(e) {
 });
 
 exports.showhidemenu=showhidemenu;
-
-exports.setDuration=function(dur)
-{
+exports.menuOpen=menuOpen
+exports.setDuration=function(dur){
 	duration = dur;
 };

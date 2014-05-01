@@ -18,14 +18,14 @@
 
 ".menurow":{
 	backgroundColor:"#414141",
-	top:"100"
+	height:"50",
+	layout:"horizontal"
 }
 
 ".menurowcontainer":{
 	width:Ti.UI.FILL,
 	color:"#fff",
-	height:"50",
-	layout:"horizontal"
+	height:Ti.UI.SIZE
 }
 
 ".iconcontainer":{

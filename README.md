@@ -34,6 +34,13 @@ If you add a "menu button" to your main view, simply add an event listener like 
 	})
 ````
 
+ActionBar
+======
+In the ActionBar Demo folder you'll find an example of how to trigger the Drawer Menu from the ActionBar
+
+![ActionBar Demo](http://drops.ricardoalcocer.com/drops/drawermenu_actionbar-aLFu5IksDE.gif)
+
+
 Apps
 ======
 Send me a link to your app, or a pull request of the README.md file to showcase your app using this Widget.

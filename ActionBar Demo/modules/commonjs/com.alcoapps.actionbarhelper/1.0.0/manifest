@@ -1,0 +1,17 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 1.0.0
+description: ActionBar Helper Module
+author: Ricardo Alcocer
+license: MIT License
+copyright: 
+
+
+# these should not be edited
+name: com.alcoapps.actionbarhelper
+moduleid: com.alcoapps.actionbarhelper
+guid: e9a1cef8-eac5-4ed3-ad39-8b8046ef0666
+platform: commonjs
+minsdk: 3.2.0.GA

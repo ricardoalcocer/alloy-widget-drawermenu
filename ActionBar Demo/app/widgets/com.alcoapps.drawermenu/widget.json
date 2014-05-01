@@ -1,0 +1,14 @@
+{
+	"id": "com.alcoapps.drawermenu",
+	"name": "Drawer Menu",
+	"description" : "Implements a slide-in, Facebook-style menu.",
+	"author": "Ricardo Alcocer",
+	"version": "2.0",
+	"copyright":"Copyright (c) 2012-2014 by Ricardo Alcocer",
+	"license":"MIT",
+	"min-alloy-version": "1.0",
+	"min-titanium-version":"2.1",
+	"tags":"",
+	"platforms":"android,ios",
+	"dependencies": {}
+}

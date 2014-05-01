@@ -1,0 +1,40 @@
+<Alloy>	
+	<View id="menu">
+		<View class="menubanner"></View>
+		<TableView class="menuoptions"onClick="menuclick">
+			<TableViewRow rowId="1">
+				<View class="menurow">
+					<View class="iconcontainer">
+						<ImageView class="icon" image="/ic_action_not_important.png"/>
+					</View>
+					<Label class="menucaption">Send in the clowns</Label>
+				</View>
+			</TableViewRow>
+			<TableViewRow rowId="2">
+				<View class="menurow">
+					<View class="iconcontainer">
+						<ImageView class="icon" image="/ic_action_not_important.png"/>
+					</View>
+					<Label class="menucaption">Open your eyes Nicolas</Label>
+				</View>
+			</TableViewRow>
+			<TableViewRow rowId="3">
+				<View class="menurow">
+					<View class="iconcontainer">
+						<ImageView class="icon" image="/ic_action_not_important.png"/>
+					</View>
+					<Label class="menucaption">It's not your child</Label>
+				</View>
+			</TableViewRow>
+			<TableViewRow rowId="4">
+				<View class="menurow">
+					<View class="iconcontainer">
+						<ImageView class="icon" image="/ic_action_not_important.png"/>
+					</View>
+					<Label class="menucaption">The Glory of the Empire</Label>
+				</View>
+			</TableViewRow>
+		</TableView>
+	</View>
+	
+</Alloy>

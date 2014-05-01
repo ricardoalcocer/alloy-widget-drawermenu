@@ -1,0 +1,9 @@
+{
+    "description": "ActionBar Helper Module",
+    "directories": {
+        "lib": "."
+    },
+    "main": "com.alcoapps.actionbarhelper",
+    "name": "com.alcoapps.actionbarhelper",
+    "version": "1.0.0"
+}

@@ -1,0 +1,40 @@
+"#menu":{
+	height:Ti.UI.FILL, 
+	width:Ti.UI.FILL
+}
+
+".menubanner":{
+	top:"0",
+	height:"100",
+	backgroundImage:"/coffee.png"
+}
+
+".menuoptions":{
+	backgroundColor:"#4F4F4F",
+	top:"100"
+}
+
+".menurow":{
+	width:Ti.UI.FILL,
+	color:"#fff",
+	height:"50",
+	layout:"horizontal"
+}
+
+".iconcontainer":{
+	 width:Ti.UI.SIZE,
+	 height:Ti.UI.FILL,
+	 left:"5"
+}
+
+".icon":{
+	 width:"30",
+	 height:"30"
+}		
+		
+".menucaption":{
+	 width:Ti.UI.FILL,
+	 height:Ti.UI.FILL,
+	 color:"#fff",
+	 left:"10"
+}

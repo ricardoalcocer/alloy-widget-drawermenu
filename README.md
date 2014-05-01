@@ -40,6 +40,8 @@ In the ActionBar Demo folder you'll find an example of how to trigger the Drawer
 
 ![ActionBar Demo](http://drops.ricardoalcocer.com/drops/drawermenu_actionbar-aLFu5IksDE.gif)
 
+Want to try it for yourself? Download the [APK](https://github.com/ricardoalcocer/alloy-widget-drawermenu/blob/master/ActionBar%20Demo/ActionBar%20Demo.apk?raw=true).
+
 
 Apps
 ======

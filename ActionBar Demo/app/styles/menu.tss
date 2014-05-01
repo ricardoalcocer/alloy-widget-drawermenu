@@ -1,6 +1,7 @@
 "#menu":{
 	height:Ti.UI.FILL, 
-	width:Ti.UI.FILL
+	width:Ti.UI.FILL,
+	backgroundColor: "#4F4F4F"
 }
 
 ".menubanner":{
@@ -10,11 +11,17 @@
 }
 
 ".menuoptions":{
-	backgroundColor:"#4F4F4F",
-	top:"100"
+	backgroundColor:"#343434",
+	top:"100",
+	height: Ti.UI.SIZE
 }
 
 ".menurow":{
+	backgroundColor:"#414141",
+	top:"100"
+}
+
+".menurowcontainer":{
 	width:Ti.UI.FILL,
 	color:"#fff",
 	height:"50",

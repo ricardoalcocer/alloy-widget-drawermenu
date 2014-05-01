@@ -39,7 +39,7 @@
 	</ios>
 	<android xmlns:android="http://schemas.android.com/apk/res/android">
 		<manifest>
-			<application android:theme="@android:style/Theme.Holo.Light"></application>
+			<application android:theme="@android:style/Theme.Holo.Light.DarkActionBar"></application>
 		</manifest>
 	</android>
 	<mobileweb>

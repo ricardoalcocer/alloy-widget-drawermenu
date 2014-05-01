@@ -49,6 +49,13 @@ module.exports = function(o){
 			console.log('Error: this does not work');
 		}
 	};
+	actionBarHelper.prototype.displayHomeAsUp=function(value){
+		if(this.works){
+			this.actionBar.displayHomeAsUp=value;	
+		}else{
+			console.log('Error: this does not work');
+		}
+	};
 	actionBarHelper.prototype.setBackgroundImage=function(image){
 		if (this.works){
 			this.actionBar.setBackgroundImage(image);

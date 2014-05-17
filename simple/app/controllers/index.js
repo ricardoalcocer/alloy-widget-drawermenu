@@ -5,7 +5,7 @@ var menu=Alloy.createController('menu').getView();
 menu.addEventListener('click',function(e){
 	mainLabel.text='Clicked on row with ID : ' + e.rowData.rowId;
 	$.drawermenu.showhidemenu();	
-})
+});
 //
 
 //
@@ -19,7 +19,7 @@ main.add(mainLabel);
 // SET LISTENER TO OPEN/CLOSE THE MENU
 main.addEventListener('click',function(e){
 	$.drawermenu.showhidemenu();
-})
+});
 //
 
 // Initialize the widget
@@ -28,7 +28,16 @@ $.drawermenu.init({
     mainview:main,
     duration:200,
     parent: $.index
-})
+});
+
+$.drawermenu.addEventListener('open', function menuOpen () {
+	Ti.API.info("Menu opened");
+});
+
+$.drawermenu.addEventListener('close', function menuOpen () {
+	Ti.API.info("Menu closed");
+});
+
 // you have access to:
 // $.drawermenu.init
 // $.drawermenu.duration 			(read/write)

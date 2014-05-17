@@ -1,7 +1,7 @@
 var thisWin=$.index;
 var main=Ti.UI.createView({
 	backgroundColor: "#fff"
-})
+});
 
 // store drawermenu and main in global variable for easy access from menu
 Alloy.CFG.drawermenu=$.drawermenu;
@@ -14,7 +14,15 @@ $.drawermenu.init({
     mainview:main,
     duration:200,
     parent: thisWin
-})
+});
+
+$.drawermenu.addEventListener('open', function menuOpen () {
+	Ti.API.info("Menu opened");
+});
+
+$.drawermenu.addEventListener('close', function menuOpen () {
+	Ti.API.info("Menu closed");
+});
 
 thisWin.addEventListener('open',function(e){
 	var actionBarHelper = require('com.alcoapps.actionbarhelper')(thisWin);	
@@ -24,6 +32,6 @@ thisWin.addEventListener('open',function(e){
 		$.drawermenu.showhidemenu();
 	});
 	actionBarHelper.displayHomeAsUp(false);
-})
+});
 
 thisWin.open();

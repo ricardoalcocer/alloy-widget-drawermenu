@@ -16,14 +16,6 @@ $.drawermenu.init({
     parent: thisWin
 });
 
-$.drawermenu.addEventListener('open', function menuOpen () {
-	Ti.API.info("Menu opened");
-});
-
-$.drawermenu.addEventListener('close', function menuOpen () {
-	Ti.API.info("Menu closed");
-});
-
 thisWin.addEventListener('open',function(e){
 	var actionBarHelper = require('com.alcoapps.actionbarhelper')(thisWin);	
 	actionBarHelper.setIcon('/drawericonw@2x.png');

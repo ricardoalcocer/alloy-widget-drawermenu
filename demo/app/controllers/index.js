@@ -39,14 +39,6 @@ $.drawermenu.init({
     parent: $.index
 });
 
-$.drawermenu.addEventListener('open', function menuOpen () {
-    Ti.API.info("Menu opened");
-});
-
-$.drawermenu.addEventListener('close', function menuOpen () {
-    Ti.API.info("Menu closed");
-});
-
 //variable to controler de open/close slide
 var activeView = 1;
 

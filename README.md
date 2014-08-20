@@ -8,6 +8,10 @@ This is an Appcelerator Alloy widget to implement a nice "drawer-type" menu on y
 
 This Widget exposes two views: drawermenuview and drawermainview
 
+Before you get started
+======
+The demo at [/demo](https://github.com/ricardoalcocer/alloy-widget-drawermenu/tree/master/demo) shows the menu running on iOS with a simple yet practical scenario of two menu options and responding to click events.  For Android after Titanium SDK 3.3.0, you MUST use the ActionBar which is displayed by default on Android apps, and it's somewhat difficult to hide (I blogged about this [here](http://www.appcelerator.com/blog/2014/08/hiding-the-android-actionbar/)).  So, for Android you have two options: check the example in [/ActionBar Demo](https://github.com/ricardoalcocer/alloy-widget-drawermenu/tree/master/ActionBar%20Demo), or better yet, don't use this widget for Android and use Android's native Drawer Layout exposed by this [module](https://github.com/Tripvi/Ti.DrawerLayout).
+
 
 Getting started
 ======
